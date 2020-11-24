@@ -5,13 +5,14 @@ package com.zipcodewilmington.looplabs;
  * @ATTENTION_TO_STUDENTS You are forbidden from modifying the signature of this class.
  */
 public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
-    Integer[] intArray;
+    Integer[] intArray = new Integer[]{};
 
     public IntegerDuplicateDeleter(Integer[] intArray) {
         super(intArray);
     }
 
     public Integer[] countRepeats(){
+        if (intArray == null) throw new NullPointerException("Null: add to intArray before this");
         Integer[] numOfDupes = new Integer[intArray.length];
         for (int i=0; i<intArray.length; i++){
             for (int j=0; j<intArray.length; j++){
@@ -35,16 +36,17 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
         int indexNumToDelete = 0;
         Integer[] numOfDupes = countRepeats();
         for (int i=0; i<numOfDupes.length; i++){
-            if (numOfDupes[i] == maxNumberOfDuplications){
+            if (numOfDupes[i] >= maxNumberOfDuplications){
                 indexNumToDelete++;
             }
         }
         //create new array
         Integer[] answer = new Integer[intArray.length-indexNumToDelete];
         //add all (non deleted) indexes
+        if (answer.length == 0) return answer;
         int j=0;
         for (int i=0; i<numOfDupes.length; i++){
-            if (numOfDupes[i] != maxNumberOfDuplications){
+            if (numOfDupes[i] < maxNumberOfDuplications){
                 answer[j] = numOfDupes[i];
                 j++;
             }
