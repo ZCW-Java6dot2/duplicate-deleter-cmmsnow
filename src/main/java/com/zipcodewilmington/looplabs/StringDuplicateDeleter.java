@@ -7,14 +7,11 @@ import java.util.Arrays;
  * @ATTENTION_TO_STUDENTS You are forbidden from modifying the signature of this class.
  */
 public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
-    //String[] intArray = new String[]{};
-
     public StringDuplicateDeleter(String[] intArray) {
         super(intArray);
     }
 
     public Integer[] countRepeats(){
-        //if (array == null) throw new NullPointerException("Null: add to intArray before this");
         Integer[] numOfDupes = new Integer[array.length];
         for (int i=0; i<array.length; i++){
             int counter = 1;
@@ -76,6 +73,7 @@ public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
         return answer;
     }
 
+//Very good code below but I didn't write it
 //    @Override
 //    public String[] removeDuplicates(int maxNumberOfDuplications) {
 //        return Arrays.stream(array).filter(y -> getOccurrence(y) < maxNumberOfDuplications).toArray(String[]::new);
