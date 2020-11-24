@@ -5,20 +5,20 @@ package com.zipcodewilmington.looplabs;
  * @ATTENTION_TO_STUDENTS You are forbidden from modifying the signature of this class.
  */
 public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
-    String[] intArray = new String[]{}; //should I be adding this?
+    //String[] intArray = new String[]{}; //should I be adding this?
 
     public StringDuplicateDeleter(String[] intArray) {
         super(intArray);
     }
 
     public Integer[] countRepeats(){
-        if (intArray == null) throw new NullPointerException("Null: add to intArray before this");
-        Integer[] numOfDupes = new Integer[intArray.length];
-        for (int i=0; i<intArray.length; i++){
-            for (int j=0; j<intArray.length; j++){
+        if (array == null) throw new NullPointerException("Null: add to intArray before this");
+        Integer[] numOfDupes = new Integer[array.length];
+        for (int i=0; i<array.length; i++){
+            for (int j=0; j<array.length; j++){
                 int counter = 0;
                 if (i != j){
-                    if (intArray[i] == intArray[j]){
+                    if (array[i] == array[j]){
                         counter++;
                     }
                 }
@@ -39,13 +39,13 @@ public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
             }
         }
         //create new array
-        String[] answer = new String[intArray.length-indexNumToDelete];
+        String[] answer = new String[array.length-indexNumToDelete];
         //add all (non deleted) indexes
         if (answer.length == 0) return answer;
         int j=0;
         for (int i=0; i<numOfDupes.length; i++){
             if (numOfDupes[i] < maxNumberOfDuplications){
-                answer[j] = intArray[i];
+                answer[j] = array[i];
                 j++;
             }
         }
@@ -62,12 +62,12 @@ public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
             }
         }
         //create new array
-        String[] answer = new String[intArray.length-indexNumToDelete];
+        String[] answer = new String[array.length-indexNumToDelete];
         //add all (non deleted) indexes
         int j=0;
         for (int i=0; i<numOfDupes.length; i++){
             if (numOfDupes[i] != exactNumberOfDuplications){
-                answer[j] = intArray[i];
+                answer[j] = array[i];
                 j++;
             }
         }
