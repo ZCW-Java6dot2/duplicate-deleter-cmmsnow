@@ -17,7 +17,7 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
         //if (array == null) throw new NullPointerException("Null: add to intArray before this");
         Integer[] numOfDupes = new Integer[array.length];
         for (int i=0; i<array.length; i++){
-            int counter = 0;
+            int counter = 1;
             for (int j=0; j<array.length; j++){
                 if (i != j){
                     if (array[i] == array[j]){
