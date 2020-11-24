@@ -5,7 +5,7 @@ package com.zipcodewilmington.looplabs;
  * @ATTENTION_TO_STUDENTS You are forbidden from modifying the signature of this class.
  */
 public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
-    Integer[] intArray = new Integer[]{};
+    Integer[] intArray = new Integer[]{};//should I be adding this?
 
     public IntegerDuplicateDeleter(Integer[] intArray) {
         super(intArray);
@@ -29,7 +29,6 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
     }
 
 
-    //THIS ONE NEEDS WORK
     @Override
     public Integer[] removeDuplicates(int maxNumberOfDuplications) {
         //count how many indexes to delete
@@ -47,7 +46,7 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
         int j=0;
         for (int i=0; i<numOfDupes.length; i++){
             if (numOfDupes[i] < maxNumberOfDuplications){
-                answer[j] = numOfDupes[i];
+                answer[j] = intArray[i];
                 j++;
             }
         }
@@ -70,7 +69,7 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
         int j=0;
         for (int i=0; i<numOfDupes.length; i++){
             if (numOfDupes[i] != exactNumberOfDuplications){
-                answer[j] = numOfDupes[i];
+                answer[j] = intArray[i];
                 j++;
             }
         }
