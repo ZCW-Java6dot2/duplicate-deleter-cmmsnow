@@ -7,25 +7,25 @@ import java.util.Arrays;
  * @ATTENTION_TO_STUDENTS You are forbidden from modifying the signature of this class.
  */
 public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
-    //Integer[] intArray = new Integer[]{};//should I be adding this?
+    //Integer[] intArray = new Integer[]{};
 
     public IntegerDuplicateDeleter(Integer[] intArray) {
         super(intArray);
     }
 
     public Integer[] countRepeats(){
-        if (array == null) throw new NullPointerException("Null: add to intArray before this");
+        //if (array == null) throw new NullPointerException("Null: add to intArray before this");
         Integer[] numOfDupes = new Integer[array.length];
         for (int i=0; i<array.length; i++){
+            int counter = 0;
             for (int j=0; j<array.length; j++){
-                int counter = 0;
                 if (i != j){
                     if (array[i] == array[j]){
                         counter++;
                     }
                 }
-                numOfDupes[i] = counter;
             }
+            numOfDupes[i] = counter;
         }
         return numOfDupes;
     }
